@@ -1,0 +1,19 @@
+/*ページ全体の設定*/
+body{
+	background-color: white;
+	margin: auto;
+	text-align: center;
+}
+
+/*テキストの設定*/
+p{
+	text-align: center;
+}
+
+/*メインタイトルの設定*/
+p.MainTitle{
+	background-color: #F5BBCA;
+	color: #2E2B21;
+}
+
+/*ボタンの設定*/
