@@ -13,26 +13,15 @@ function sound()
 	document.getElementById( id ).play() ;
 }
 
-/ダブルタップの挙動制御/ 
-(function(win, doc) {
-
-    "use strict";
-
-    var tapFlag = false,
-        timer;
-
-    doc.body.addEventListener("touchstart", function(evt) {
-        if (tapFlag) {
-            evt.preventDefault();
-        }
-    }, true);
-
-    doc.body.addEventListener("touchend", function(evt) {
-        tapFlag = true;
-        clearTimeout(timer);
-        timer = setTimeout(function() {
-            tapFlag = false;
-        }, 200);
-    }, true);
-
-})(window, document);
+/ダブルタップの挙動制御/
+<script>
+/* ダブルタップによる拡大を禁止 */
+var t = 0;
+  document.documentElement.addEventListener('touchend', function (e) {
+  var now = new Date().getTime();
+  if ((now - t) < 350){
+    e.preventDefault();
+  }
+  t = now;
+  }, false);
+</script>
